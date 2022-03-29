@@ -1,5 +1,7 @@
 # cmdOnSave
 
+WIP pre-alpha stage !
+
 - use in-project `.onsave.config` file to add the command(s) you want to run on save.
 - you can run a specific command on save for each file type, or you can run command(s) after saving any file in the current project.
 
