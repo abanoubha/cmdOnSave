@@ -7,7 +7,7 @@ It is __not__ like [emeraldwalk's runOnSave](https://github.com/emeraldwalk/vsco
 
 ## Example config file
 
-Config file is stored in the root of the project as `.cmdOnSave.json`.
+Config file is stored in the root of the project as `cmdOnSave.json`.
 
 ```json
 {
