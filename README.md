@@ -1,70 +1,35 @@
-# cmdOnSave README
+# cmdOnSave
 
-This is the README for your extension "cmdOnSave". After writing up a brief description, we recommend including the following sections.
+- use in-project `.onsave.config` file to add the command(s) you want to run on save.
+- you can run a specific command on save for each file type, or you can run command(s) after saving any file in the current project.
 
-## Features
+It is __not__ like [emeraldwalk's runOnSave](https://github.com/emeraldwalk/vscode-runonsave) nor [Tibfib's saveAndRun](https://github.com/Tibfib/vscode-save-and-run-ext) nor [padjon's](https://github.com/padjon/vscode-save-and-run-ext) nor [wk-j's](https://github.com/wk-j/vscode-save-and-run).
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+## Example config file
 
-For example if there is an image subfolder under your extension project workspace:
+Config file is stored in the root of the project as `.cmdOnSave.json`.
 
-\!\[feature X\]\(images/feature-x.png\)
+```json
+{
+    "commands": [
+        {
+            "match": ".*",
+            "isAsync": true,
+            "cmd": "npx tailwindcss -i ./src/input.css -o ./public/style.css --minify"
+        },
+        {
+            "match": "\\.html$",
+            "cmd": "npx tailwindcss -i ./src/input.css -o ./public/style.css --minify",
+            "isAsync": true
+        },
+        {
+            "match": "\\.css$",
+            "cmd": "npx tailwindcss -i ./src/input.css -o ./public/style.css --minify"
+        }
+    ]
+}
+```
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+## Tasks
 
-## Requirements
-
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
-
-## Extension Settings
-
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
-
-This extension contributes the following settings:
-
-* `myExtension.enable`: enable/disable this extension
-* `myExtension.thing`: set to `blah` to do something
-
-## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
-
-## Release Notes
-
-Users appreciate release notes as you update your extension.
-
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
------------------------------------------------------------------------------------------------------------
-## Following extension guidelines
-
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
-
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
-
-## Working with Markdown
-
-**Note:** You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux)
-* Toggle preview (`Shift+CMD+V` on macOS or `Shift+Ctrl+V` on Windows and Linux)
-* Press `Ctrl+Space` (Windows, Linux) or `Cmd+Space` (macOS) to see a list of Markdown snippets
-
-### For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+- [x] bare bone extension <https://code.visualstudio.com/api/get-started/your-first-extension>
