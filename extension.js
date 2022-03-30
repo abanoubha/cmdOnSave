@@ -16,7 +16,13 @@ function activate(context) {
 		var cfgPath = vscode.workspace.getWorkspaceFolder(document.uri);
 		cfgPath = cfgPath ? cfgPath.uri.fsPath : vscode.workspace.workspaceFolders;
 
-		var cfg = vscode.workspace.findFiles("file://" + cfgPath + "/cmdOnSave.json")
+		// console.log("file:/" + cfgPath + "/cmdOnSave.json");
+
+		// var cfg = vscode.workspace.findFiles("file:/" + cfgPath + "/cmdOnSave.json")
+		// 	.then(result => vscode.workspace.fs.readFile(result[0]));
+
+		// findFiles('**​/*.js', '**​/node_modules/**', 10)
+		var cfg = vscode.workspace.findFiles('**/cmdOnSave.json', '**/node_modules/**', 1)
 			.then(result => vscode.workspace.fs.readFile(result[0]));
 
 		console.log(cfg);
