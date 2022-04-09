@@ -1,4 +1,4 @@
-# cmdOnSave
+# cmdOnSave v0.1.0
 
 WIP pre-alpha stage !
 
