@@ -1,4 +1,6 @@
-# cmdOnSave v0.1.0
+# ~~cmdOnSave v0.1.0~~
+
+THIS PROJECT IS DISCOUNTINUED DUE TO TIME LIMITS
 
 WIP pre-alpha stage !
 
